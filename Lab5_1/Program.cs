@@ -25,10 +25,10 @@ class Program
                 switch (mode)
                 {
                     case 1:
-                        Console.WriteLine("Gone to mode 1 and gone out of it");
+                        RunStandardMode();
                         continue;
                     case 2:
-                        Console.WriteLine("Gone to mode 2 and gone out of it");
+                        RunAdvancedMode();
                         continue;
                 }
             }
@@ -48,6 +48,16 @@ class Program
         Console.WriteLine("1. Стандартний");
         Console.WriteLine("2. Інженерний");
         Console.WriteLine("Або введіть \"exit\", щоб завершити роботу програми:");
+    }
+
+    static void RunStandardMode()
+    {
+
+    }
+
+    static void RunAdvancedMode()
+    {
+
     }
 
     static void PrintErrorMessage(string message)
