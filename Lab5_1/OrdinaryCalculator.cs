@@ -4,6 +4,7 @@ namespace Lab5_1;
 
 class OrdinaryCalculator
 {
+    protected string[] operations;
     protected double num1;
     protected double num2;
 
@@ -17,6 +18,30 @@ class OrdinaryCalculator
     {
         get => num2;
         set => num2 = value;
+    }
+
+    public OrdinaryCalculator()
+    {
+        operations = new string[] { "+", "-", "*", "/" };
+    }
+
+    public virtual void PrintIntro()
+    {
+        Console.WriteLine("Стандартний режим калькулятора.");
+    }
+
+    public void PrintOptions()
+    {
+        Console.WriteLine("Виберіть операцію:");
+
+        for (int i = 0; i < operations.Length; i++)
+        {
+            int number = i + 1;
+            string symbol = operations[i];
+            Console.WriteLine($"{number}. {symbol}");
+        }
+
+        Console.WriteLine("Або введіть \"exit\", щоб вийти з цього режиму:");
     }
 
     public double Add()
