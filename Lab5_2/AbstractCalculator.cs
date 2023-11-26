@@ -22,6 +22,27 @@ abstract class AbstractCalculator
 
     public string Make { get => make; protected set => make = value; }
 
+    public abstract string[] Operations { get; }
+
+    public void PrintIntro()
+    {
+        Console.WriteLine($"{make} режим калькулятора.");
+    }
+
+    public void PrintOptions()
+    {
+        Console.WriteLine("Виберіть операцію:");
+
+        for (int i = 0; i < Operations.Length; i++)
+        {
+            int number = i + 1;
+            string symbol = Operations[i];
+            Console.WriteLine($"{number}. {symbol}");
+        }
+
+        Console.WriteLine("Або введіть \"exit\", щоб вийти з цього режиму:");
+    }
+
     public abstract double Add();
 
     public abstract double Subtract();
