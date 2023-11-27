@@ -33,13 +33,13 @@ class Program
                 }
             }
 
-            PrintErrorMessage("Некоректно вибраний режим. Повторіть введення.");
+            PrintErrorMessage("Некоректно вибраний режим. Повторіть введення.\n");
         }
     }
 
     static void PrintIntro()
     {
-        Console.WriteLine("Дана програма є калькулятором, що має два режими роботи: \"стандартний\" та \"інженерний\".");
+        Console.WriteLine("Дана програма є калькулятором, що має два режими роботи: \"стандартний\" та \"інженерний\".\n");
     }
 
     static void PrintOptions()
@@ -85,7 +85,7 @@ class Program
                 }
             }
 
-            PrintErrorMessage("Некоректно обрана опція.");
+            PrintErrorMessage("Некоректно обрана опція. Повторіть введення.\n");
         }
     }
 
@@ -127,38 +127,41 @@ class Program
                 }
             }
 
-            PrintErrorMessage("Некоректно обрана опція.");
+            PrintErrorMessage("Некоректно обрана опція. Повторіть введення.\n");
         }
     }
 
     static void RunAddition(OrdinaryCalculator calculator)
     {
+        Console.WriteLine("Операція додавання.");
         calculator.Num1 = ReadNumber("Введіть перше число:");
         calculator.Num2 = ReadNumber("Введіть друге число:");
 
         double result = calculator.Add();
 
-        Console.WriteLine($"Відповідь: {result}");
+        Console.WriteLine($"Відповідь: {result}\n");
     }
 
     static void RunSubtraction(OrdinaryCalculator calculator)
     {
+        Console.WriteLine("Операція віднімання.");
         calculator.Num1 = ReadNumber("Введіть перше число:");
         calculator.Num2 = ReadNumber("Введіть друге число:");
 
         double result = calculator.Subtract();
 
-        Console.WriteLine($"Відповідь: {result}");
+        Console.WriteLine($"Відповідь: {result}\n");
     }
 
     static void RunMultiplication(OrdinaryCalculator calculator)
     {
+        Console.WriteLine("Операція множення.");
         calculator.Num1 = ReadNumber("Введіть перше число:");
         calculator.Num2 = ReadNumber("Введіть друге число:");
 
         double result = calculator.Multiply();
 
-        Console.WriteLine($"Відповідь: {result}");
+        Console.WriteLine($"Відповідь: {result}\n");
     }
 
     static void RunDivision(OrdinaryCalculator calculator)
@@ -167,29 +170,31 @@ class Program
         {
             try
             {
+                Console.WriteLine("Операція ділення.");
                 calculator.Num1 = ReadNumber("Введіть перше число:");
                 calculator.Num2 = ReadNumber("Введіть друге число:");
 
                 double result = calculator.Divide();
 
-                Console.WriteLine($"Відповідь: {result}");
+                Console.WriteLine($"Відповідь: {result}\n");
 
                 break;
             }
             catch (DivideByZeroException)
             {
-                PrintErrorMessage("Некоректне введення: спроба ділення на нуль.");
+                PrintErrorMessage("Некоректне введення: спроба ділення на нуль.\n");
             }
         }
     }
 
     static void RunByteToKilobyte(AdvancedCalculator calculator)
     {
+        Console.WriteLine("Операція перетворення байтів у кілобайти.");
         calculator.Num1 = ReadNumberOfBytes("Введіть ціле число байтів в діапазоні від 1 до 10^9:");
 
         double result = calculator.ByteToKilobyte();
 
-        Console.WriteLine($"Відповідь: {result}");
+        Console.WriteLine($"Відповідь: {result}\n");
     }
 
     static double ReadNumber(string message)
@@ -206,7 +211,7 @@ class Program
             }
             else
             {
-                PrintErrorMessage("Некоректне введення.");
+                PrintErrorMessage("Некоректне введення.\n");
             }
         }
     }
@@ -225,7 +230,7 @@ class Program
             }
             else
             {
-                PrintErrorMessage("Некоректне введення.");
+                PrintErrorMessage("Некоректне введення.\n");
             }
         }
     }
@@ -239,7 +244,7 @@ class Program
 
     static void PrintOutro()
     {
-        Console.WriteLine("Дякуємо за користування програмою!");
+        Console.WriteLine("\nДякуємо за користування програмою!");
         Console.WriteLine("Програму підготували студенти 121 спеціальності:\nЄлизавета Розсохач, Ярослава Сальтевська, Андрій Дашков, Вікторія Долга.");
     }
 }
