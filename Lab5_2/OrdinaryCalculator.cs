@@ -5,7 +5,7 @@ namespace Lab5_2;
 class OrdinaryCalculator : AbstractCalculator
 {
     public override string[] Operations => new string[] { "+", "-", "*", "/" };
-    
+
     public OrdinaryCalculator()
     {
         Make = "Стандартний";
@@ -36,12 +36,5 @@ class OrdinaryCalculator : AbstractCalculator
         }
 
         return Num1 / Num2;
-    }
-
-    protected static void PrintErrorMessage(string message)
-    {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine(message);
-        Console.ResetColor();
     }
 }
